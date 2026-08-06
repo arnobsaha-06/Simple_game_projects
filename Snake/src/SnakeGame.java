@@ -27,6 +27,9 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener{
     Tile food;
     Random random;
 
+    //img
+    Image bgimg;
+
     //game logic
     Timer loop;
     int Vx;
@@ -37,9 +40,12 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener{
         this.width = width;
         this.height = height;
         setPreferredSize(new Dimension(width, height));
-        setBackground(Color.LIGHT_GRAY);
+        //setBackground(Color.LIGHT_GRAY);
         addKeyListener(this);
         setFocusable(true);
+
+        //bg
+        bgimg = new ImageIcon(getClass().getResource("./snakebg.png")).getImage();
 
         head = new Tile(5, 5);
         body = new ArrayList<Tile>();
@@ -66,6 +72,9 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener{
         //   g.drawLine(i * tileSize, 0, i * tileSize, height);
         // g.drawLine(0, i * tileSize, width, i * tileSize);
         //}
+
+        //img
+        g.drawImage(bgimg, 0, 0, width, height, null);
 
         //Food
         g.setColor(Color.ORANGE);
