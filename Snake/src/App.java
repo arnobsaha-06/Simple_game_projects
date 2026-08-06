@@ -16,5 +16,6 @@ public class App {
         f.add(geemu);
         f.pack();
         geemu.requestFocus();
+        f.setVisible(true);
     }
 }
